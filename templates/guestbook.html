@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Guestbook</title>
+    <link rel="stylesheet" href="/static/guestbook.css">
+  </head>
+  <body>
+    <p>Hello, {{nickname}}!</p>
+    <ul>
+      {% for g in greetings %}
+        <li>{{g.message}}
+          <small>(by {{g.author}} on {{g.date}}</small>
+        </li>
+      {% endfor %}
+    </ul>
+    <form action="/" method="post">
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+      <div><input type="submit" value="Sign Guestbook"></div>
+    </form>
+  </body>
+</html>
